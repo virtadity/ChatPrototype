@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+{% load static tailwind_tags %}
+{% load google_fonts %}
+{% load heroicons %}
+<head>
+    {% tailwind_css %}
+    <title>Chat Prototype</title>
+</head>
+<body class="font-[Jost] bg-white-200 flex flex-col h-screen antialiased">
+
+    <header class="flex bg-zinc-200 justify-center">
+        <nav>
+            <ul class="flex p-10 justify-center text-lg font-medium divide-x-2">
+                <li class="px-5 py-1 border-l-2 border-y-2 border-zinc-400 rounded-l-xl text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out"> Чат </li>
+                <li class="px-5 py-1 border-y-2 border-zinc-400 text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out"> Участники чат </li>
+                <li class="px-5 py-1 border-y-2 border-zinc-400 text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out"> Информация о чате </li>
+                <li class="px-5 py-1 border-r-2 border-y-2 border-cyan-400 rounded-r-xl text-cyan-500 hover:bg-cyan-400 hover:text-white transition duration-300 ease-in-out"><p>Войти</p></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% if latest_messages_list %}
+        <div>
+            <ul>
+                {% for message in latest_messages_list %}
+                <li>
+                    {{ message.text }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div class="content-center grow py-auto justify-center items-center" >
+            <p class="text-4xl text-center text-zinc-500">Сообщений нет</p>
+        </div>
+    {% endif %}
+
+    <footer class="flex bg-zinc-100 justify-center p-10">
+        <div class="flex justify-center gap-1">
+                <input type="text" class="p-2 bg-white-100 border-2 rounded-l-lg border-zinc-400 focus:outline-none flex-initial text-zinc-500" placeholder="Сообщение">
+                <button class="flex-none p-2 rounded-r-lg border-2 border-lime-400 text-lime-500 hover:bg-lime-400 hover:text-white transition duration-300 ease-in-out">Отправить</button>
+        </div>
+    </footer>
+
+</body>
+</html>
