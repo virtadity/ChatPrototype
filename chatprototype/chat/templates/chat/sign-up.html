@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+{% load static tailwind_tags %}
+{% load google_fonts %}
+{% load heroicons %}
+<head>
+    {% tailwind_css %}
+    <title>Chat Prototype</title>
+</head>
+<body class="font-[Jost] bg-white-200 flex flex-col h-screen antialiased">
+
+    <header class="flex bg-zinc-200 justify-center">
+        <nav class="flex gap-3">
+            <ul class="flex py-10 justify-center text-lg font-medium divide-x-2">
+                <li class="px-5 py-1 border-l-2 border-y-2 border-zinc-400 rounded-l-xl text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out">
+                    <a href="/"> Чат</a>
+                </li>
+                <li class="px-5 py-1 border-y-2 border-zinc-400 text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out">
+                    <a href="/members">Участники чата</a>
+                </li>
+                <li class="px-5 py-1 border-r-2 border-y-2 border-zinc-400 text-zinc-500 rounded-r-xl hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out">
+                    <a href="/info">Информация о чате</a>
+                </li>
+            </ul>
+            <ul class="flex py-10 justify-center text-lg font-medium divide-x-2">
+                <li class="px-5 py-1 border-l-2 border-y-2 border-green-400 text-green-500 rounded-l-lg hover:bg-green-400 hover:text-white transition duration-300 ease-in-out">
+                    <a href="/sign-up">Регистрация</a>
+                </li>
+                <li class="px-5 py-1 border-r-2 border-y-2 border-cyan-400 rounded-r-lg text-cyan-500 hover:bg-cyan-400 hover:text-white transition duration-300 ease-in-out">
+                    <a href="/sign-in">Войти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="grow" >
+        <form class="flex flex-col justify-self-center py-10 px-15 m-5 gap-5 rounded-xl text-zinc-600 shadow">
+            <h1 class="text-4xl">Регистрация</h1>
+            <div>
+                <label for="username" class="flex">Имя пользователя</label>
+                <input type="text" required id="username" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <div>
+                <label for="password" class="flex">Пароль</label>
+                <input type="password" required id="password" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <div>
+                <label for="repeat_password" class="flex">Повторите пароль</label>
+                <input type="password" required id="repeat_password" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <div>
+                <label for="email" class="flex">Адрес электронной почты</label>
+                <input type="email" required id="email" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <div>
+                <label for="first_name" class="flex">Имя*</label>
+                <input type="text" id="first_name" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <div>
+                <label for="last_name" class="flex">Фамилия*</label>
+                <input type="text" id="last_name" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+            </div>
+            <h1>* - необязательные поля </h1>
+            <button class="rounded-xl border-2 p-1 border-blue-500 hover:bg-blue-500 hover:text-white">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <footer class="flex bg-zinc-100 justify-center p-10"></footer>
+</body>
+</html>

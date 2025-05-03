@@ -35,25 +35,21 @@
 
     <div class="content-center grow py-auto justify-center items-center" >
 
-        {% if latest_messages_list %}
+        {% if members_list %}
             <div>
                 <ul>
-                    {% for message in latest_messages_list %}
-                        <li> {{ message.text }} </li>
+                    {% for member in members_list %}
+                        <li> {{ member.text }} </li>
                     {% endfor %}
                 </ul>
             </div>
         {% else %}
             <div class="content-center grow py-auto justify-center items-center" >
-                <p class="text-4xl text-center text-zinc-500">Сообщений нет</p>
+                <p class="text-4xl text-center text-zinc-500">Участников нет</p>
             </div>
         {% endif %}
     </div>
-    <footer class="flex bg-zinc-100 justify-center p-10">
-        <div class="flex justify-center gap-1">
-            <input type="text" class="p-2 bg-white-100 border-2 rounded-l-lg border-zinc-400 focus:outline-none flex-initial text-zinc-500" placeholder="Сообщение"/>
-            <button class="flex-none p-2 rounded-r-lg border-2 border-lime-400 text-lime-500 hover:bg-lime-400 hover:text-white transition duration-300 ease-in-out">Отправить</button>
-        </div>
-    </footer>
+
+    <footer class="flex bg-zinc-100 justify-center p-10"></footer>
 </body>
 </html>

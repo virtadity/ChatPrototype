@@ -9,7 +9,7 @@
 </head>
 <body class="font-[Jost] bg-white-200 flex flex-col h-screen antialiased">
 
-    <header class="flex bg-zinc-200 justify-center">
+<header class="flex bg-zinc-200 justify-center">
         <nav class="flex gap-3">
             <ul class="flex py-10 justify-center text-lg font-medium divide-x-2">
                 <li class="px-5 py-1 border-l-2 border-y-2 border-zinc-400 rounded-l-xl text-zinc-500 hover:bg-zinc-400 hover:text-white transition duration-300 ease-in-out">
@@ -33,27 +33,16 @@
         </nav>
     </header>
 
-    <div class="content-center grow py-auto justify-center items-center" >
-
-        {% if latest_messages_list %}
-            <div>
-                <ul>
-                    {% for message in latest_messages_list %}
-                        <li> {{ message.text }} </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% else %}
-            <div class="content-center grow py-auto justify-center items-center" >
-                <p class="text-4xl text-center text-zinc-500">Сообщений нет</p>
-            </div>
-        {% endif %}
-    </div>
-    <footer class="flex bg-zinc-100 justify-center p-10">
-        <div class="flex justify-center gap-1">
-            <input type="text" class="p-2 bg-white-100 border-2 rounded-l-lg border-zinc-400 focus:outline-none flex-initial text-zinc-500" placeholder="Сообщение"/>
-            <button class="flex-none p-2 rounded-r-lg border-2 border-lime-400 text-lime-500 hover:bg-lime-400 hover:text-white transition duration-300 ease-in-out">Отправить</button>
+    <div class="grow" >
+        <div class="flex flex-col justify-self-center p-10 shadow m-5 gap-5">
+            <h1 class="text-3xl">Информация о проекте</h1>
+            <p class="flex text-lg">Данный проект является прототипом чата.<br>
+                Зарегистрированные участники могут оставлять сообщения.<br>
+                А также просматривать участников беседы.
+            </p>
         </div>
-    </footer>
+    </div>
+
+    <footer class="flex bg-zinc-100 justify-center p-10"></footer>
 </body>
 </html>
