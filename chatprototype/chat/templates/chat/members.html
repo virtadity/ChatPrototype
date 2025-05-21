@@ -26,20 +26,30 @@
                 <li class="px-5 py-1 border-l-2 border-y-2 border-green-400 text-green-500 rounded-l-lg hover:bg-green-400 hover:text-white transition duration-300 ease-in-out">
                     <a href="/sign-up">Регистрация</a>
                 </li>
+
                 <li class="px-5 py-1 border-r-2 border-y-2 border-cyan-400 rounded-r-lg text-cyan-500 hover:bg-cyan-400 hover:text-white transition duration-300 ease-in-out">
                     <a href="/sign-in">Войти</a>
                 </li>
             </ul>
+            <form method="post" action="{% url 'logout' %}"  class="flex py-10 justify-center text-lg font-medium">
+                {% csrf_token %}
+                <button class="border-2 rounded-md border-red-500 text-red-500 px-5 py-1 hover:text-white transition duration-300 ease-in-out hover:bg-red-500">
+                    Выйти из аккаунта
+                </button>
+            </form>
         </nav>
     </header>
 
-    <div class="content-center grow py-auto justify-center items-center" >
+    <div class="py-10 flex-col grow py-auto justify-center items-center" >
 
         {% if members_list %}
             <div>
-                <ul>
+                <ul class="flex flex-col justify-center">
                     {% for member in members_list %}
-                        <li> {{ member.text }} </li>
+                        <li class="flex p-3 rounded shadow flex-row gap-5 text-zinc-500">
+                            <p class="flex"> {{ member.username }} </p>
+                            <p class="flex"> {{ member.email }}</p>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

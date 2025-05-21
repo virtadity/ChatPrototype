@@ -26,27 +26,31 @@
                 <li class="px-5 py-1 border-l-2 border-y-2 border-green-400 text-green-500 rounded-l-lg hover:bg-green-400 hover:text-white transition duration-300 ease-in-out">
                     <a href="/sign-up">Регистрация</a>
                 </li>
+
                 <li class="px-5 py-1 border-r-2 border-y-2 border-cyan-400 rounded-r-lg text-cyan-500 hover:bg-cyan-400 hover:text-white transition duration-300 ease-in-out">
                     <a href="/sign-in">Войти</a>
                 </li>
             </ul>
+            <form method="post" action="{% url 'logout' %}"  class="flex py-10 justify-center text-lg font-medium">
+                {% csrf_token %}
+                <button class="border-2 rounded-md border-red-500 text-red-500 px-5 py-1 hover:text-white transition duration-300 ease-in-out hover:bg-red-500">
+                    Выйти из аккаунта
+                </button>
+            </form>
         </nav>
     </header>
 
     <div class="grow" >
-        <form class="flex flex-col justify-self-center py-10 px-15 m-5 gap-5 rounded-xl text-zinc-600 shadow">
+        <form method="post" action="{% url 'sign-in' %}" class="flex flex-col justify-self-center py-10 px-15 m-5 gap-5 rounded-xl text-zinc-600 shadow">
+            {% csrf_token %}
             <h1 class="text-4xl">Вход</h1>
             <div>
                 <label for="username" class="flex">Имя пользователя</label>
-                <input type="text" required id="username" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
-            </div>
-            <div>
-                <label for="email" class="flex">Адрес электронной почты</label>
-                <input type="email" required id="email" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+                <input type="text" required id="username" name="username" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
             </div>
             <div>
                 <label for="password" class="flex">Пароль</label>
-                <input type="password" required id="password" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
+                <input type="password" required id="password" name="password" class="flex border-1 rounded border-zinc-300 w-64 outline-none px-1"/>
             </div>
             <button class="rounded-xl border-2 p-1 border-blue-500 hover:bg-blue-500 hover:text-white">Войти</button>
         </form>

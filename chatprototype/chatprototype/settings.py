@@ -53,11 +53,11 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Обновление стилей
     "django_browser_reload.middleware.BrowserReloadMiddleware",
-
 ]
 
 ROOT_URLCONF = 'chatprototype.urls'
@@ -136,3 +136,5 @@ TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = "C:/Users/user/AppData/Roaming/npm/npm.cmd"
 GOOGLE_FONTS = ["Jost"]
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+LOGIN_URL = "sign-in"
